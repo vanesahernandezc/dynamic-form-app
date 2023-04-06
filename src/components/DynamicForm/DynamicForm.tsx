@@ -1,6 +1,9 @@
 import { Container } from "react-bootstrap";
 import "./DynamicForm.css";
 import { useState } from "react";
+import FirstStep from "./FirstStep/FirstStep";
+import SecondStep from "./SecondStep/SecondStep";
+import ThirdStep from "./ThirdStep/ThirdStep";
 // import FirstStep from "./FirstStep/FirstStep";
 // import SecondStep from "./SecondStep/SecondStep";
 // import ThirdStep from "./ThirdStep";
@@ -25,7 +28,7 @@ export default function DynamicForm() {
           <h1 className="title-dynamic-form">Fill the form</h1>
           <p className="steps-numbers">Step {step} of 3</p>
 
-          {/* {getPageByStep(step, setStep)} */}
+          {getPageByStep(step, setStep)}
 
           <div className="actions">
             <div className="container-text">
@@ -50,12 +53,12 @@ export default function DynamicForm() {
   );
 }
 
-// function getPageByStep(step, setStep) {
-//   if (step === 1) {
-//     return <FirstStep />;
-//   } else if (step === 2) {
-//     return <SecondStep />;
-//   } else if (step === 3) {
-//     return <ThirdStep setStep={setStep} />;
-//   }
-// }
+function getPageByStep(step: any, setStep: any) {
+  if (step === 1) {
+    return <FirstStep />;
+  } else if (step === 2) {
+    return <SecondStep />;
+  } else if (step === 3) {
+    return <ThirdStep setStep={setStep} />;
+  }
+}
