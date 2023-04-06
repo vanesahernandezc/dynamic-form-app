@@ -1,13 +1,6 @@
 import { useState } from "react";
-import {
-  Col,
-  Container,
-  FloatingLabel,
-  Form,
-  Modal,
-  Row,
-} from "react-bootstrap";
-// import Resume from "../Resume/Resume";
+import { Col, Container, FloatingLabel, Form, Row } from "react-bootstrap";
+import Resume from "../Resume/Resume";
 import "./ThirdStep.css";
 
 export default function ThirdStep({ setStep }: any) {
@@ -43,9 +36,9 @@ export default function ThirdStep({ setStep }: any) {
             View result 🙌
           </p>
         </div>
-        {/* {modal && (
+        {modal && (
           <Resume showModal={modal} setModal={setModal} setStep={setStep} />
-        )} */}
+        )}
       </Container>
     </div>
   );
