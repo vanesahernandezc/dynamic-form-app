@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-// import Select from "react-select";
+import Select from "react-select";
 
 const options = [
   { id: 1, value: "football", label: "Football ⚽" },
@@ -13,7 +13,7 @@ const options = [
 ];
 
 export default function SecondStep() {
-  const [selectOption, setSelectOption] = useState(null);
+  const [selectOption, setSelectOption] = useState<any>(null);
 
   const hobbiesSer = JSON.stringify(selectOption);
   localStorage.setItem("hobbies", hobbiesSer);
@@ -31,13 +31,13 @@ export default function SecondStep() {
         <Row className="justify-content-md-center">
           <Col lg="7">
             <h5>Select your hobbies</h5>
-            {/* <Select
+            <Select
               defaultValue={selectOption}
               onChange={setSelectOption}
               options={options}
               isSearchable
               isMulti
-            /> */}
+            />
           </Col>
           <Col lg="7" className="mt-4">
             <h5>Do you want to add more?</h5>

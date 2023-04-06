@@ -4,9 +4,6 @@ import { useState } from "react";
 import FirstStep from "./FirstStep/FirstStep";
 import SecondStep from "./SecondStep/SecondStep";
 import ThirdStep from "./ThirdStep/ThirdStep";
-// import FirstStep from "./FirstStep/FirstStep";
-// import SecondStep from "./SecondStep/SecondStep";
-// import ThirdStep from "./ThirdStep";
 
 export default function DynamicForm() {
   const [step, setStep] = useState(1);
