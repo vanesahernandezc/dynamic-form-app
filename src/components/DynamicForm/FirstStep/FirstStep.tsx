@@ -2,6 +2,7 @@ import "./FirstStep.css";
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import CardFruit from "./CardFruit";
+import { IFruits } from "../../interface/IFruits";
 // import CardFruit from "./CardFruit";
 
 export const fruits = [
@@ -10,28 +11,28 @@ export const fruits = [
     icon: "🍅",
     name: "Tomato",
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "Whether sliced in a salad, cooked in a sauce, or enjoyed on their own, tomatoes are a versatile and delicious.",
   },
   {
     id: 2,
     icon: "🍇",
     name: "Grapes",
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "Grapes are a delicious and healthy fruit that come in a variety of flavors. They are a snack that can be enjoyed at any time.",
   },
   {
     id: 3,
     icon: "🍌",
     name: "Banana",
     description:
-      "Some quick example text to build on the card title and make up the bulk of the card's content.",
+      "Not just a tasty fruit, bananas are also packed with potassium and other important nutrients.",
   },
 ];
 
 export default function FirstStep() {
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [selectedCard, setSelectedCard] = useState<any>(null);
 
-  const clickCard = (fruit: any) => {
+  const clickCard = (fruit: IFruits) => {
     setSelectedCard(fruit.id);
     localStorage.setItem("fruitName", fruit.name);
     localStorage.setItem("iconFruit", fruit.icon);
@@ -43,7 +44,7 @@ export default function FirstStep() {
       <h4>Select your fruit and then click the button of "Next step" </h4>
       <Container className="p-5 text-center">
         <Row>
-          {fruits.map((fruit, index) => (
+          {fruits.map((fruit: IFruits, index) => (
             <CardFruit
               fruit={fruit}
               key={index}
